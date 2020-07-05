@@ -16,3 +16,4 @@ def record_audio():
 
 print("How can I assist you?")
 voice_data = record_audio()
+print(voice_data)
