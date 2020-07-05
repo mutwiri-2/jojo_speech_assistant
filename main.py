@@ -11,3 +11,6 @@ def record_audio():
             print("Sorry, I did not get that")
         except sr.RequestError:
             print("Sorry, my speech service is down at the moment")
+
+print("How can I assist you?")
+voice_data = record_audio()
