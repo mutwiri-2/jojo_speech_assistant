@@ -51,7 +51,8 @@ def respond(voice_data):
         webbrowser.get().open(url)
         print('Here is the location of ' + location)
 
-
+time.sleep(1)
 print("How can I assist you?")
-voice_data = record_audio()
-respond(voice_data)
+while True:
+    voice_data = record_audio()
+    respond(voice_data)
