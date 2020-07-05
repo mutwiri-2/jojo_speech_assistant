@@ -18,13 +18,16 @@ def record_audio():
             return voice_data
 
 def respond(voice_data):
+    # get name
     if 'what is your name' in voice_data:
         print('My name is jojo')
-    
+    #get today's date
     today = date.today()
-    today = today.strftime("%B %d, %Y")
+    date_today = today.strftime("%B %d, %Y")
     if 'what date is it' in voice_data:
-        print('Today\'s date is ' + today)
+        print('Today\'s date is ' + date_today)
+    
+
 
 print("How can I assist you?")
 voice_data = record_audio()
