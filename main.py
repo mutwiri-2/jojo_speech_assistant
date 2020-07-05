@@ -40,6 +40,9 @@ def respond(voice_data):
     # search 
     if 'search' in voice_data:
         search_term = record_audio('What do you want to search for?')
+        url = 'https://google.com/search?q=' + search_term
+        webbrowser.get().open(url)
+        print("Here is what I found for " + search_term)
 
 print("How can I assist you?")
 voice_data = record_audio()
