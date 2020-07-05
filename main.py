@@ -50,6 +50,11 @@ def respond(voice_data):
         url = 'https://google.nl/maps/place/' + location + '/&amp;'
         webbrowser.get().open(url)
         print('Here is the location of ' + location)
+    
+    # exit
+    if 'quit' in voice_data:
+        print("Goodbye")
+        exit()
 
 time.sleep(1)
 print("How can I assist you?")
