@@ -2,7 +2,7 @@ import speech_recognition as sr
 
 recognizer = sr.Recognizer() # responsible for recognizing speech
 
-def record_audio:
+def record_audio():
     with sr.Microphone() as source: # the microphone will be our source
         audio = recognizer.listen(source)
         try:
@@ -11,4 +11,3 @@ def record_audio:
             print("Sorry, I did not get that")
         except sr.RequestError:
             print("Sorry, my speech service is down at the moment")
-
