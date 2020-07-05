@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import alsa_error_handler
+from datetime import date
 
 recognizer = sr.Recognizer() # responsible for recognizing speech
 
@@ -19,6 +20,11 @@ def record_audio():
 def respond(voice_data):
     if 'what is your name' in voice_data:
         print('My name is jojo')
+    
+    today = date.today()
+    today = today.strftime("%B %d, %Y")
+    if 'what date is it' in voice_data:
+        print('Today\'s date is ' + today)
 
 print("How can I assist you?")
 voice_data = record_audio()
