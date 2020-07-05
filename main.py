@@ -16,6 +16,10 @@ def record_audio():
                 print("Sorry, my speech service is down at the moment")
             return voice_data
 
+def respond(voice_data):
+    if 'what is your name' in voice_data:
+        print('My name is jojo')
+
 print("How can I assist you?")
 voice_data = record_audio()
-print(voice_data)
+respond(voice_data)
