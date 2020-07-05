@@ -6,9 +6,11 @@ import webbrowser
 
 recognizer = sr.Recognizer() # responsible for recognizing speech
 
-def record_audio():
+def record_audio(ask=False):
     with alsa_error_handler.noalsaerr():
         with sr.Microphone() as source: # the microphone will be our source
+            if ask:
+                print(ask)
             audio = recognizer.listen(source)
             voice_data = ''
             try:
