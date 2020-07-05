@@ -2,6 +2,8 @@ import speech_recognition as sr
 import alsa_error_handler
 from datetime import date
 import time
+import webbrowser
+
 recognizer = sr.Recognizer() # responsible for recognizing speech
 
 def record_audio():
@@ -32,6 +34,10 @@ def respond(voice_data):
     current_time = time.strftime("%H:%M:%S", t)
     if 'what is the time' in voice_data:
         print('The time is ' + current_time)
+
+    # search 
+    if 'search' in voice_data:
+        search_term = record_audio('What do you want to search for?')
 
 print("How can I assist you?")
 voice_data = record_audio()
