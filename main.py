@@ -1,6 +1,7 @@
 import speech_recognition as sr
 import alsa_error_handler
 from datetime import date
+from datetime import datetime
 import time
 import webbrowser
 
@@ -39,8 +40,8 @@ def respond(voice_data):
         jojo_speak('Today\'s date is ' + date_today)
     
     # get the current time
-    t = time.localtime()
-    current_time = time.strftime("%H:%M:%S", t)
+    t = datetime.now()
+    current_time = t.strftime("%I:%M:%S %p")
     if 'what is the time' in voice_data:
         jojo_speak('The time is ' + current_time)
 
