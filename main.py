@@ -63,13 +63,14 @@ def respond(voice_data):
         exit()
 
 def jojo_speak(audio_string):
-    tts = gTTS(text=audio_string, lang='en')
-    num = random.randint(1, 100000000)
-    audio_file = 'audio-' + str(num) + '.mp3'
-    tts.save(audio_file)
-    playsound.playsound(audio_file)
-    print(audio_string)
-    os.remove(audio_file)
+    with alsa_error_handler.noalsaerr():
+        tts = gTTS(text=audio_string, lang='en')
+        num = random.randint(1, 100000000)
+        audio_file = 'audio-' + str(num) + '.mp3'
+        tts.save(audio_file)
+        playsound.playsound(audio_file)
+        print(audio_string)
+        os.remove(audio_file)
 
 time.sleep(1)
 jojo_speak("How can I assist you?")
