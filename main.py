@@ -21,6 +21,7 @@ def record_audio(ask=False):
             voice_data = ''
             try:
                 voice_data = recognizer.recognize_google(audio)
+                print(voice_data)
             except sr.UnknownValueError:
                 jojo_speak("Sorry, I did not get that")
             except sr.RequestError:
