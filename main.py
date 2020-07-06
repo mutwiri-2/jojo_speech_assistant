@@ -45,14 +45,14 @@ def respond(voice_data):
 
     # search 
     if 'search' in voice_data:
-        search_term = record_audio('What do you want to search for?')
+        search_term = record_audio('What do you want to search for')
         url = 'https://google.com/search?q=' + search_term
         webbrowser.get().open(url)
         jojo_speak("Here is what I found for " + search_term)
 
     # find a place on Google maps
     if 'find location' in voice_data:
-        location = record_audio('What is the location?')
+        location = record_audio('What is the location')
         url = 'https://google.nl/maps/place/' + location + '/&amp;'
         webbrowser.get().open(url)
         jojo_speak('Here is the location of ' + location)
@@ -73,7 +73,7 @@ def jojo_speak(audio_string):
         os.remove(audio_file)
 
 time.sleep(1)
-jojo_speak("How can I assist you?")
+jojo_speak("How can I assist you")
 while True:
     voice_data = record_audio()
     respond(voice_data)
