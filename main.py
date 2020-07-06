@@ -4,6 +4,12 @@ from datetime import date
 import time
 import webbrowser
 
+import playsound
+import os
+import random
+from gtts import gTTS
+
+
 recognizer = sr.Recognizer() # responsible for recognizing speech
 
 def record_audio(ask=False):
@@ -55,6 +61,15 @@ def respond(voice_data):
     if 'quit' in voice_data:
         print("Goodbye")
         exit()
+
+def jojo_speak(audio_string):
+    tts = gTTS(text=audio_string, lang='en')
+    num = random.randint(1, 100000000)
+    audio_file = 'audio-' + str(num) + '.mp3'
+    tts.save(audio_file)
+    playsound.playsound(audio_file)
+    print(audio_string)
+    os.remove(audio_file)
 
 time.sleep(1)
 print("How can I assist you?")
